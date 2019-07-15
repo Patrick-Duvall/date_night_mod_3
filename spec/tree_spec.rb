@@ -20,4 +20,13 @@ describe BinarySearchtree do
     expect(@tree.include?(99)).to eq(false)
   end
 
+  it 'can find a max score' do
+    expect(@tree.max).to eq({"Sharknado 3" => 92})
+  end
+
+  it "can find a min score" do
+    @tree.insert(15, "10 things")
+    expect(@tree.min).to eq({"10 things" => 15})
+  end
+
 end

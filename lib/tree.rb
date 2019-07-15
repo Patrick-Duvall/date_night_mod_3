@@ -30,5 +30,21 @@ class BinarySearchtree
       false
     end
 
+    def max
+      node = @root_node
+      until node.right == nil
+        node = node.right
+      end
+      {node.title => node.value}
+    end
+
+    def min
+      node = @root_node
+      until node.left == nil
+        node = node.left
+      end
+      {node.title => node.value}
+    end
+
   end
 end
