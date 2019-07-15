@@ -6,7 +6,6 @@ class BinarySearchtree
     @root_node = nil
   end
   def insert(value, title)
-    #Seems to make tree, does not return depth
     if @root_node.nil?
       @root_node = Node.new(value, title)
       return 0
@@ -65,4 +64,14 @@ class BinarySearchtree
       end
       {node.title => node.value}
     end
+
+    def sort(node=@root_node)
+    return if @root_node.nil?
+    retval = []
+    require "pry"; binding.pry
+    sort(node.left)
+    retval << {node.title => node.value}
+    sort(node.right)
+  end
+
 end

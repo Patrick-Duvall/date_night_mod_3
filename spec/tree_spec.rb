@@ -40,4 +40,12 @@ describe BinarySearchtree do
     expect(@tree.depth_of(87)).to eq(nil)
   end
 
+  it "can sort movies" do
+    retval = [{"Johnny English"=>16},
+              {"Hannibal Buress: Animal Furnace"=>50},
+              {"Bill & Ted's Excellent Adventure"=>61},
+              {"Sharknado 3"=>92}]
+    expect(@tree.sort).to eq(retval)
+  end
+
 end
