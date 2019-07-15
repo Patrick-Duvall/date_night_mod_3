@@ -30,6 +30,22 @@ class BinarySearchtree
       false
     end
 
+    def depth_of(check)
+      node = root_node
+      depth = 0
+      until node.value == check
+        if check > node.value
+          node = node.right
+          depth += 1
+        elsif check < node.value
+          node = node.left
+          depth += 1
+        end
+        return nil if node == nil
+      end
+      depth
+    end
+
     def max
       node = @root_node
       until node.right == nil

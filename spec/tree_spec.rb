@@ -29,4 +29,10 @@ describe BinarySearchtree do
     expect(@tree.min).to eq({"10 things" => 15})
   end
 
+  it "can find the depth of a node" do
+    expect(@tree.depth_of(92)).to eq(1)
+    expect(@tree.depth_of(50)).to eq(2)
+    expect(@tree.depth_of(87)).to eq(nil)
+  end
+
 end
