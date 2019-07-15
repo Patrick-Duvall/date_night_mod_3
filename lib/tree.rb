@@ -3,13 +3,18 @@ class BinarySearchtree
   def initialize
     @root_node = nil
   end
-  def insert(node, value, title)
+  def insert(value, title)
+    node = @root_node
+    depth = 0
     if @root_node.nil?
       @root_node = Node.new(value, title)
-    elsif value > @rootnode.value
-      @root_node.right = Node.new(value, title)
-    elsif value < @rootnode.value
-      @root_node.left = Node.new(value, title)
+    elsif value > node.value
+      node.right = Node.new(value, title)
+      depth += 1
+    elsif value <= node.value
+      node.left = Node.new(value, title)
+      depth += 1
     end
+    depth
   end
 end
