@@ -9,10 +9,15 @@ describe BinarySearchtree do
     @tree.insert(50, "Hannibal Buress: Animal Furnace")
   end
   it "can insert nodes" do
-    expect(@tree.root_node.title).to eq("Bill & Ted's Excellent Adventure")
-    expect(@tree.root_node.right.title).to eq("Sharknado 3")
-    expect(@tree.root_node.left.title).to eq("Johnny English")
-    expect(@tree.root_node.left.right.title).to eq("Hannibal Buress: Animal Furnace")
+    tree = BinarySearchtree.new
+    expect(tree.insert(61, "Bill & Ted's Excellent Adventure")).to eq(0)
+    expect(tree.insert(16, "Johnny English")).to eq(1)
+    expect(tree.insert(92, "Sharknado 3")).to eq(1)
+    expect(tree.insert(50, "Hannibal Buress: Animal Furnace")).to eq(2)
+    expect(tree.root_node.title).to eq("Bill & Ted's Excellent Adventure")
+    expect(tree.root_node.right.title).to eq("Sharknado 3")
+    expect(tree.root_node.left.title).to eq("Johnny English")
+    expect(tree.root_node.left.right.title).to eq("Hannibal Buress: Animal Furnace")
   end
 
   it "can check for a value on the tree" do

@@ -1,3 +1,5 @@
+
+
 class BinarySearchtree
   attr_accessor :root_node
   def initialize
@@ -15,6 +17,8 @@ class BinarySearchtree
     else value <= node.value
       node = node.insert(value, title)
     end
+    depth_of(value)
+  end
 
     def include?(check)
       node = @root_node
@@ -61,6 +65,4 @@ class BinarySearchtree
       end
       {node.title => node.value}
     end
-
-  end
 end
