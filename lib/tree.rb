@@ -4,17 +4,31 @@ class BinarySearchtree
     @root_node = nil
   end
   def insert(value, title)
-    node = @root_node
-    depth = 0
+    #Seems to make tree, does not return depth
     if @root_node.nil?
       @root_node = Node.new(value, title)
-    elsif value > node.value
-      node.right = Node.new(value, title)
-      depth += 1
-    elsif value <= node.value
-      node.left = Node.new(value, title)
-      depth += 1
+      return 0
     end
-    depth
+    node = @root_node
+    if value > node.value
+      node = node.insert(value, title)
+    else value <= node.value
+      node = node.insert(value, title)
+    end
+
+    def include?(check)
+      node = @root_node
+      until node == nil
+        if check > node.value
+          node = node.right
+        elsif check < node.value
+          node = node.left
+        else
+          return true
+        end
+      end
+      false
+    end
+
   end
 end
